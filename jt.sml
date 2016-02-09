@@ -37,6 +37,18 @@ fun toJS(JSON.ARRAY x)   = JS.ARRAY(map toJS x)
 fun readJson() =
   toJS(JSONParser.parse(TextIO.stdIn))
 
+datatype cmd
+  = DOWN of string
+  | GOSUB of cmd list
+
+(* fun readCommands(args: string list) = *)
+(*   case args of Empty => raise Fail("no arguments") *)
+(*              | (x::rest) => ( *)
+(*                  case x of "[" => GOSUB(readCommands(rest)) *)
+(*                          | "]" => None *)
+(*                          | _ => DOWN(x) *)
+(*              ) *)
+
 fun main(name: string, args: string list) =
   let val jsonValue = readJson()
   in processArgument(jsonValue, (hd args));
