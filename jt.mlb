@@ -2,6 +2,7 @@
 $(SML_LIB)/basis/default.mlb
 $(SML_LIB)/smlnj-lib/Util/smlnj-lib.mlb
 $(SML_LIB)/smlnj-lib/JSON/json-lib.mlb
+cmlib/cmlib-mlton.mlb
 (* ann "nonexhaustiveMatch ignore" in *)
-  jt.sml
+jt.sml
 (* end *)
